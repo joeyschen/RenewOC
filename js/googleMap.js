@@ -8,4 +8,6 @@ function initMap() {
     position: cerritos,
     map: map
   });
+  console.log("init");
+  
 }
