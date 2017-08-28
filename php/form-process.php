@@ -1,67 +1,75 @@
 <?php
+if(isset($_POST['email'])) {
 
-$errorMSG = "";
-
-// NAME
-if (empty($_POST["name"])) {
-    $errorMSG = "Name is required ";
-} else {
-    $name = $_POST["name"];
-}
-
-// EMAIL
-if (empty($_POST["email"])) {
-    $errorMSG .= "Email is required ";
-} else {
-    $email = $_POST["email"];
-}
-
-// MSG SUBJECT
-if (empty($_POST["msg_subject"])) {
-    $errorMSG .= "Subject is required ";
-} else {
-    $msg_subject = $_POST["msg_subject"];
-}
-
-
-// MESSAGE
-if (empty($_POST["message"])) {
-    $errorMSG .= "Message is required ";
-} else {
-    $message = $_POST["message"];
-}
-
-
-$EmailTo = "armanmia7@gmail.com";
-$Subject = "New Message Received";
-
-// prepare email body text
-$Body = "";
-$Body .= "Name: ";
-$Body .= $name;
-$Body .= "\n";
-$Body .= "Email: ";
-$Body .= $email;
-$Body .= "\n";
-$Body .= "Subject: ";
-$Body .= $msg_subject;
-$Body .= "\n";
-$Body .= "Message: ";
-$Body .= $message;
-$Body .= "\n";
-
-// send email
-$success = mail($EmailTo, $Subject, $Body, "From:".$email);
-
-// redirect to success page
-if ($success && $errorMSG == ""){
-   echo "success";
-}else{
-    if($errorMSG == ""){
-        echo "Something went wrong :(";
-    } else {
-        echo $errorMSG;
+    function died($error) {
+        // your error code can go here
+        echo "We are very sorry, but there were error(s) found with the form you submitted. ";
+        echo "These errors appear below.<br /><br />";
+        echo $error."<br /><br />";
+        echo "Please go back and fix these errors.<br /><br />";
+        die();
     }
-}
 
+
+    // validation expected data exists
+    if(!isset($_POST['name']) ||
+        !isset($_POST['msg_subject']) ||
+        !isset($_POST['email']) ||
+        !isset($_POST['message'])) {
+        died('We are sorry, but there appears to be a problem with the form you submitted.');
+    }
+
+    $email_to="nlemu001@live.com";
+    $email_subject="Your email subject line";
+
+    $name = $_POST['name']; // required
+    $msg_subject = $_POST['msg_subject']; // required
+    $email_from = $_POST['email']; // required
+    $message = $_POST['message']; // required
+
+    $error_message = "";
+    $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
+
+    if(!preg_match($email_exp,$email_from)) {
+        $error_message .= 'The Email Address you entered does not appear to be valid.<br />';
+    }
+
+    $string_exp = "/^[A-Za-z .'-]+$/";
+
+    if(!preg_match($string_exp,$name)) {
+        $error_message .= 'The First Name you entered does not appear to be valid.<br />';
+    }
+
+    if(!preg_match($string_exp,$msg_subject)) {
+        $error_message .= 'The Last Name you entered does not appear to be valid.<br />';
+    }
+
+    if(strlen($message) < 2) {
+        $error_message .= 'The Comments you entered do not appear to be valid.<br />';
+    }
+
+    if(strlen($error_message) > 0) {
+        died($error_message);
+    }
+
+    $email_message = "Form details below.\n\n";
+
+    function clean_string($string) {
+        $bad = array("content-type","bcc:","to:","cc:","href");
+        return str_replace($bad,"",$string);
+    }
+
+    $email_message .= "Name: ".clean_string($name)."\n";
+    $email_message .= "Subject: ".clean_string($msg_subject)."\n";
+    $email_message .= "Email: ".clean_string($email_from)."\n";
+    $email_message .= "Message: ".clean_string($message)."\n";
+
+    // create email headers
+    $headers = 'From: '.$email_from."\r\n".
+    'Reply-To: '.$email_from."\r\n" .
+    'X-Mailer: PHP/' . phpversion();
+    $success = mail($email_to, $email_subject, $email_message, $headers);
+
+    echo "done";
+}
 ?>
