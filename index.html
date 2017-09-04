@@ -50,8 +50,8 @@
               <li class="nav-item">
                 <a class="nav-link" href="#contact">Donate</a>
               </li> 
-              <li class="nav-item">
-                <a class="nav-link" href="#subscribe">Subscribe</a>
+              <li class="nav-item"> 
+                <a class="nav-link" href="#subscribe">Subscribe</a> 
               </li>
             </ul>
               <div class="row">
@@ -106,13 +106,18 @@
           <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Here are some of the amazing things we offer.</p>
         </div>
 
-        <div class="row">
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-            <div>
-              <div id="map"></div>
-            </div>
-          </div>
-        </div>
+        <div id="map"></div>
+          <script>
+            var map;
+            function initMap() {
+              map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: -34.397, lng: 150.644},
+                zoom: 8
+              });
+            }
+          </script>
+          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiH0pbPvUVFaiXEECJ7yRgxgSGArDJqeQ&callback=initMap"
+          async defer></script>
       </div>
     </section>
         <!--<div class="row">
@@ -199,42 +204,42 @@
             <div class="item-boxes wow fadeInDown" data-wow-delay="0.2s">
               <img class="rounded-circle" style="margin-bottom: 10px;" src="img/RenewPeople/Wangs.jpg" alt="Wilson and Liam" width="140" height="140">
               <h4>Wilson & Nina Wang</h4>
-              <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. </p>
+              <p>Lead Pastor & Children's Pastor</p>
             </div>
           </div>
           <div class="col-md-4 col-sm-6">
             <div class="item-boxes wow fadeInDown" data-wow-delay="0.4s">
               <img class="rounded-circle" src="img/RenewPeople/Whitmores.jpg" alt="Whitmores" width="140" height="140">
               <h4>Jonathan & Kristen Whitmore</h4>
-              <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. </p>
+              <p>Leadership team</p>
             </div>
           </div>
           <div class="col-md-4 col-sm-6">
             <div class="item-boxes wow fadeInDown" data-wow-delay="0.6s">
               <img class="rounded-circle" src="img/RenewPeople/PaulTiffany.jpg" alt="Kims" width="140" height="140">
               <h4>Paul & Tiffany Kim</h4>
-              <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. </p>
+              <p>Families Ministry & Leadership Team</p>
               </div>
           </div>
           <div class="col-md-4 col-sm-6">
             <div class="item-boxes wow fadeInDown" data-wow-delay="0.2s">
               <img class="rounded-circle" src="img/RenewPeople/Lemens.jpg" alt="Wilson and Liam" width="140" height="140">
               <h4>Mike and Katherine Lemen</h4>
-              <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+              <p>Cares Team with Apartment Life</p>
             </div>
           </div>
           <div class="col-md-4 col-sm-6">
             <div class="item-boxes wow fadeInDown" data-wow-delay="0.4s">
               <img class="rounded-circle" src="img/RenewPeople/Kuos.jpg" alt="Belinda" width="140" height="140">
               <h4>Belinda Kuo</h4>
-              <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+              <p>Administration and Operations</p>
             </div>
           </div>
           <div class="col-md-4 col-sm-6">
             <div class="item-boxes wow fadeInDown" data-wow-delay="0.6s">
               <img class="rounded-circle" src="img/RenewPeople/Ortiz.jpg" alt="Kims" width="140" height="140">
               <h4>Jesse Ortiz</h4>
-              <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. </p>
+              <p>Director of Sound and Tech</p>
               </div>
           </div>
         </div>
@@ -276,22 +281,22 @@
                 <p style="font-weight: bold;">How did you hear about us? <small>(Check all that apply)</small></p>
                 <div class="row">
                    <div class="col-md-12">
-                    <div class="form-group" style="margin-left: 30px;">
+                    <div class="form-group">
                       <input class="form-check-input form-control" type="checkbox" value="">
                         I found you on Facebook.
                       <div class="help-block with-errors"></div>
                     </div>
-                    <div class="form-group" style="margin-left: 30px;">
+                    <div class="form-group" >
                       <input class="form-check-input form-control" type="checkbox" value="">
                         I received a flyer from someone.
                       <div class="help-block with-errors"></div>
                     </div>
-                    <div class="form-group" style="margin-left: 30px;">
+                    <div class="form-group" >
                       <input class="form-check-input form-control" type="checkbox" value="">
                         My friend invited me.
                       <div class="help-block with-errors"></div>
                     </div>
-                    <div class="form-group" style="margin-left: 30px;">
+                    <div class="form-group" >
                       <input class="form-check-input form-control" type="checkbox" value="">
                         Other <small>(Google, Yelp, etc.)</small>
                       <div class="help-block with-errors"></div>
@@ -301,24 +306,24 @@
                   <p style="font-weight: bold;">Contact me <small>(Check all that apply)</small></p>
                   <div class="row">
                     <div class="col-md-12">
-                      <div class="form-group" style="margin-left: 30px;">
+                      <div class="form-group" >
                         <input class="form-check-input form-control" type="checkbox" value="">
                           I would like to grab coffee and ask questions about Christianity.
                         <div class="help-block with-errors"></div>
                       </div>
-                      <div class="form-group" style="margin-left: 30px;">
+                      <div class="form-group" >
                         <input class="form-check-input form-control" type="checkbox" value="">
                           I would lke to learn more about small groups at Renew Church. <small>(College, Young Adult, Families)</small>
                         <div class="help-block with-errors"></div>
                       </div>
-                      <div class="form-group" style="margin-left: 30px;">
+                      <div class="form-group" >
                         <input class="form-check-input form-control" type="checkbox" value="">
                           I would like to get updates on Renew and be invited to its gatherings.<small>(Park Day, Basketball, Kickboxing)</small>
                         <div class="help-block with-errors"></div>
                       </div>
-                      <div class="form-group" style="margin-left: 30px;">
+                      <div class="form-group" >
                         <input class="form-check-input form-control" type="checkbox" value="">
-                          I am interested in hel[ing out the church with its events.
+                          I am interested in helping out the church with its events.
                         <div class="help-block with-errors"></div>
                       </div>
                     </div>
@@ -836,11 +841,9 @@ If you're looking for a church that loves God and seeks to glorify Him in what i
     <script src="js/form-validator.min.js"></script>
     <script src="js/contact-form-script.js"></script>     
     <script src="js/main.js"></script>
-    <script src="js/googleMap.js"></script>
+    <!--<script src="js/googleMap.js"></script>-->
 
-    <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3Amofkt7CQvE_N0Ra7d-tBjNLkHvqMyY&callback=initMap">
-    </script>
+    
     
   </body>
 </html>
