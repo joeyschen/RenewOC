@@ -23,6 +23,13 @@
     <link rel="stylesheet" href="css/responsive.css">
 
     <link rel="icon" type="image/gif" href="img/RenewPeople/Renew-Symbol.png" />
+
+    <style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
   </head>
   <body>
       <div class="menu-wrap">
@@ -106,19 +113,46 @@
           <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Here are some of the amazing things we offer.</p>
         </div>
 
-        <div id="map"></div>
+          <div id="map"></div>
           <script>
-            var map;
             function initMap() {
-              map = new google.maps.Map(document.getElementById('map'), {
-                center: {lat: -34.397, lng: 150.644},
-                zoom: 8
+              var renewloc = {lat: 33.8868661, lng: -117.8814601};
+              var csufloc = {lat: 33.8805768, lng: -117.8846801};
+              var apartloc = {lat: 33.885012, lng: -117.884382};
+              var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: renewloc
               });
+              var renew = new google.maps.Marker({
+                position: renewloc,
+                map: map
+              });
+              var csuf = new google.maps.Marker({
+                position: csufloc,
+                map: map
+              });
+              var apart = new google.maps.Marker({
+                position: apartloc,
+                map: map
+              });
+
+              var renewwindow = new google.maps.InfoWindow({
+                content: "Renew Church OC"
+              });
+              renewwindow.open(map,renew);
+
+              var csufwindow = new google.maps.InfoWindow({
+                content: "CSU Fullerton"
+              });
+              csufwindow.open(map,csuf);
+
+              var apartwindow = new google.maps.InfoWindow({
+                content: "Apartment Life"
+              });
+              apartwindow.open(map,apart);
             }
           </script>
-          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiH0pbPvUVFaiXEECJ7yRgxgSGArDJqeQ&callback=initMap"
-          async defer></script>
-      </div>
+          
     </section>
         <!--<div class="row">
           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -627,11 +661,11 @@
                 <div class="testimonial-text">
                   <p>Located in the Meridian Sports complex right off the 57 freeway is Renew Church's home for Sunday Service.  Located on the second floor, there are signs put up to direct you in to the service. There are usually greeters at the front who are super friendly and can help guide you in to the room where the service takes place. <br /> <br />
 
-(If you're coming with kids there is a children's ministry in the back, follow the signs and you will know where to go, or more than likely someone will have already pointed you in the right direction. From the reviews of others and speaking with other parents the children's ministry is a big reason why young families decide to attend/check out this church)! <br /> <br />
+                    (If you're coming with kids there is a children's ministry in the back, follow the signs and you will know where to go, or more than likely someone will have already pointed you in the right direction. From the reviews of others and speaking with other parents the children's ministry is a big reason why young families decide to attend/check out this church)! <br /> <br />
 
-From the pastor on down to every volunteer and person who attends, there is a realness about this place. You can sense it when you take the time to notice how much work is put in to setting up each sevice, and you can see it in the relationships people have with one another. What you end up with is a sum of imperfect yet beautiful parts coming together to make a collective whole. There is a sense of purpose to this place and what this church is doing, and it is hard to not want to be a part of that. <br /> <br />
+                    From the pastor on down to every volunteer and person who attends, there is a realness about this place. You can sense it when you take the time to notice how much work is put in to setting up each sevice, and you can see it in the relationships people have with one another. What you end up with is a sum of imperfect yet beautiful parts coming together to make a collective whole. There is a sense of purpose to this place and what this church is doing, and it is hard to not want to be a part of that. <br /> <br />
 
-If you're looking for a church that loves God and seeks to glorify Him in what it does, this church is worth checking out. If you're looking to find out who Jesus is and what the Christian faith is about, this place is worth checking out. If you're looking for a place to reconnect and strengthen your personal walk and relationship with the Lord, this place is worth checking out. If ___________________ (fill in with something that you feel an inkling or the Spirit is leading you towards) this place is worth checking out.</p>
+                    If you're looking for a church that loves God and seeks to glorify Him in what it does, this church is worth checking out. If you're looking to find out who Jesus is and what the Christian faith is about, this place is worth checking out. If you're looking for a place to reconnect and strengthen your personal walk and relationship with the Lord, this place is worth checking out. If ___________________ (fill in with something that you feel an inkling or the Spirit is leading you towards) this place is worth checking out.</p>
                   <h3>Merek C.</h3>
                   <span>Diamond Bar, CA</span>
                 </div>
@@ -842,6 +876,9 @@ If you're looking for a church that loves God and seeks to glorify Him in what i
     <script src="js/contact-form-script.js"></script>     
     <script src="js/main.js"></script>
     <!--<script src="js/googleMap.js"></script>-->
+    <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiH0pbPvUVFaiXEECJ7yRgxgSGArDJqeQ&callback=initMap">
+          </script>
 
     
     
