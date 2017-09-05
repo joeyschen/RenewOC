@@ -105,54 +105,98 @@
     <!-- Header Section End --> 
 
     <!-- Map Section Start -->
-    <section id="features" class="section" data-stellar-background-ratio="0.2">
+    <section id="portfolio" class="section" data-stellar-background-ratio="0.2">
       <div class="container">
         <div class="section-header">          
           <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Curious About <span>Renew?</span></h2>
           <hr class="lines wow zoomIn" data-wow-delay="0.3s">
-          <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Here are some of the amazing things we offer.</p>
+          <p class="section-subtitle wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Here are some of the ministries we are involved with in Fullerton. <strong>Click</strong> to learn more about them!</p>
         </div>
 
-          <div id="map"></div>
-          <script>
-            function initMap() {
-              var renewloc = {lat: 33.8868661, lng: -117.8814601};
-              var csufloc = {lat: 33.8805768, lng: -117.8846801};
-              var apartloc = {lat: 33.885012, lng: -117.884382};
-              var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 15,
-                center: renewloc
-              });
-              var renew = new google.maps.Marker({
-                position: renewloc,
-                map: map
-              });
-              var csuf = new google.maps.Marker({
-                position: csufloc,
-                map: map
-              });
-              var apart = new google.maps.Marker({
-                position: apartloc,
-                map: map
-              });
+        <div id="map"></div>
 
-              var renewwindow = new google.maps.InfoWindow({
-                content: "Renew Church OC"
-              });
-              renewwindow.open(map,renew);
+        <div class="modal fade" id="renewModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <i class="lnr lnr-home"></i>
+                <p class="modal-title" id="myModalLabel">Renew Church</p>
+              </div>
+              <div class="modal-body">
+                We have many ministries that we are involved with: <br />
+                <ol>
+                  <li><a href="#">Family</a></li>
+                  <li><a href="#">Young Adults</a></li>
+                  <li><a href="#">College</a> </li>
+                  <li><a href="#">Basketball</a> </li>
+                  <li><a href="#">Fight Club</a> </li>
+                </ol>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
-              var csufwindow = new google.maps.InfoWindow({
-                content: "CSU Fullerton"
-              });
-              csufwindow.open(map,csuf);
+        <div class="modal fade" id="csufModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <i class="fa fa-graduation-cap"></i>
+                <p class="modal-title" id="myModalLabel">CSU Fullerton</p>
+              </div>
+              <div class="modal-body">
+                Renew Church has the privilege of being a home for college students of nearby colleges. Renew has partnered with many organizations from CSU Fullerton:<br />
+                
+                <ol>
+                  <li><a href="#" style="text-indent: 20px;">Epic</a></li>
+                  <li><a href="#" style="text-indent: 20px;">Cru</a> </li>
+                </ol>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
-              var apartwindow = new google.maps.InfoWindow({
-                content: "Apartment Life"
-              });
-              apartwindow.open(map,apart);
-            }
-          </script>
-          
+        <div class="modal fade" id="apartModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <i class="lnr lnr-home"></i>
+                <p class="modal-title" id="myModalLabel">Apartment Life</p>
+              </div>
+              <div class="modal-body">
+                Katherine and Mike Lemen head the Apartment Life ministry that our church supports. 
+                They host 3 events a month with the intention of apartment retention. 
+                They use this oppurtunity to create chances to share the gospel with their neighbors.
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="hiuModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <i class="fa fa-graduation-cap"></i>
+                <p class="modal-title" id="myModalLabel">Hope International University</p>
+              </div>
+              <div class="modal-body">
+                Hope University is a neighboring college where many international students come to study. 
+                Our church has invited many international students to come learn about American culture and make new friends.
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>  
     </section>
         <!--<div class="row">
           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -226,7 +270,7 @@
     <!-- Map Section End -->    
 
     <!-- Staff Section Start -->
-    <section id="services" class="section">
+    <section id="subscribe" class="section">
       <div class="container">
         <div class="section-header">          
           <h2 class="section-title wow fadeIn" data-wow-duration="1000ms" data-wow-delay="0.3s">Our <span>Staff</span></h2>
@@ -832,7 +876,7 @@
               </ul>
             </div>
             <div class="site-info wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="0.3s">
-              <p>All copyrights reserved &copy; 2017 - Designed & Developed by <a rel="nofollow" href="https://uideck.com">UIdeck</a></p>
+              <p>Renew Church OC &copy; 2017</p>
             </div>  
           </div>
         </div>
@@ -875,10 +919,10 @@
     <script src="js/form-validator.min.js"></script>
     <script src="js/contact-form-script.js"></script>     
     <script src="js/main.js"></script>
-    <!--<script src="js/googleMap.js"></script>-->
+    <script src="js/googleMap.js"></script>
     <script async defer
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiH0pbPvUVFaiXEECJ7yRgxgSGArDJqeQ&callback=initMap">
-          </script>
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiH0pbPvUVFaiXEECJ7yRgxgSGArDJqeQ&callback=initMap">
+    </script>
 
     
     
