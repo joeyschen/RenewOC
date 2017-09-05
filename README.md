@@ -55,7 +55,7 @@ TODO:
         Event Payment
 3. Outreach Page
     -Special needs
-    -Crew
+    -Cru
     -Epic
 
 
