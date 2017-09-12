@@ -7,31 +7,7 @@ This is a church website that I creating for Renew OC. I am changing it from a s
 
 This website is mostly for people who are looking for a new church and want to understand what Renew is all about. It has very simple functionality, including signing up as a new-comer and asking for a newsletter.
 
-The types of technology used are:
--HTML/CSS(LESS)/Javascript (Jquery)
--Bootstrap 4 Alpha
--PHP
 
-TODO:
-UX:
-10 heuristics from jacob nielsen
-Find main tasks that users use the site for:
--Contact card needs to be retractable
--Donations page needs to be accessible
--Intro video/Sermon Video
--Events?
-
-Run quanlitative/quantitative tests:
-Qualitiative
--A/B Testing
--Find analytics? - Yes, there are top 10 clicks
--Event assocation for church sites
- -Ask people when they were looking for new churches via website, what they looked at first
--People looking for new churches vs regular users vs non-Christians
-
-
-UI:
-Wireframing
 
 
 3 Sites:
@@ -46,8 +22,6 @@ Wireframing
             -Campus
             -Apartment Life
             -Basketball
-
-    
 
 
     Order:
